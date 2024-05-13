@@ -51,6 +51,7 @@ public class HttpServer {
                 response.setRequest(request);
                 response.sendStaticResource();
 
+                // 一个请求就建立一个socket，耗费性能。如果可以维持长连接，一个socket进行多次http请求，那么就涉及到粘包和拆包了。
                 socket.close();
                 shutdown = request.getUri().equals(SHUTDOWN_COMMAND);
             } catch (Exception e) {
