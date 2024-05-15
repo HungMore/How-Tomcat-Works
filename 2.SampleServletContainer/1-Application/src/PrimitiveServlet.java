@@ -13,10 +13,10 @@ public class PrimitiveServlet implements Servlet {
             throws ServletException, IOException {
         System.out.println("from service");
         PrintWriter out = response.getWriter();
-        String s = "Hello. Roses are red.\r\n"+"Violets are blue.";
+        String s = "Hello. Roses are red.\r\n" + "Violets are blue.";
         out.print("HTTP/1.1 200 ok\r\n" +
                 "Content-Type: text/html\r\n" +
-                "Content-Length: "+s.length()+"\r\n" +
+                "Content-Length: " + s.length() + "\r\n" +
                 "\r\n");
         out.println(s);
     }
@@ -28,6 +28,7 @@ public class PrimitiveServlet implements Servlet {
     public String getServletInfo() {
         return null;
     }
+
     public ServletConfig getServletConfig() {
         return null;
     }
